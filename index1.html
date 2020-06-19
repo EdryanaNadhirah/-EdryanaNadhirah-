@@ -1,0 +1,84 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="../js/jquery.js"></script>
+
+<center><img src="image/logo.png" width="250" height="250"></center>
+
+<div class="main">
+<div id="form">
+<form action="../login.php" method="post">
+
+<table width="510px" align="center">
+<tr><td><fieldset>
+
+<table width="500px" align="center" border="0">	
+		
+<tr>
+<td colspan="3" height="25px" align="center"><br><b>USER: Login Page</b></td>
+</tr>
+
+<tr> 
+<td width="100px" valign="middle"><br><b>User ID:<b></td>
+<td width="200px" valign="middle"><input id="userID" name="userID" type="text"size="25"></td>
+<td width="100px" valign="middle"><p id="p1"></td>
+</tr>
+
+<tr>
+<td width="100px" valign="middle"><b>Password:<b></td>
+<td width="200px" valign="middle"><input id="password" name="password" type="password"size="25"></td>
+<td width="100px" valign="middle"><p id="p2"></td>
+</tr>
+
+<tr>
+<td><br><a href="#">Forgot password?</a></td>
+</tr>
+
+<tr>
+<td><a href="regform.php">First time user?</a></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td colspan="2">
+<input type="submit" name="submit" id="submit" value="Sign In">&nbsp;
+</td>
+</tr>
+	
+</table>
+</fieldset>
+</td></tr>
+</table>
+</form>
+</div>
+</div>
+
+<script>
+$(document).ready(function() {
+$('#submit').click(function(e) {
+
+var userID = $('#userID').val();
+var password = $('#password').val();
+
+
+if (userID == "") {
+$('#p1').text("* Username is required"); 
+$('#p1').css('color', 'red');
+$("#userID").focus();
+return false;
+}
+
+else if (password =="") {
+$('#p2').text("* Password is required");
+$('#p2').css('color', 'red');
+$("#password").focus();
+return false;
+}
+
+else {
+	return true;
+}
+
+});
+});
+
+</script>

@@ -77,5 +77,4 @@ function myFunction() {
 }
 
 </script>
-<?php }
-?>
+<?php }?>
